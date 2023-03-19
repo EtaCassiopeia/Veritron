@@ -1,8 +1,3 @@
-pub mod cli;
-pub mod errors;
-pub mod simple;
-
-use errors::OrchestrationError;
 use std::{
     backtrace::{Backtrace, BacktraceStatus},
     collections::HashMap,
@@ -13,6 +8,12 @@ use std::{
     },
     thread::current,
 };
+
+use errors::OrchestrationError;
+
+pub mod cli;
+pub mod errors;
+pub mod simple;
 
 pub fn set_panic_hook() {
     panic::set_hook(Box::new(move |panic_info| {

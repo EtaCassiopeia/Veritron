@@ -1,10 +1,10 @@
 #![allow(clippy::enum_variant_names)]
 
 use std::fmt::Display;
-use veritron_types::thiserror::Error;
-use veritron_types::{serde_yaml, thiserror};
 
 use veritron_types::errors::internal::BoxedError;
+use veritron_types::thiserror::Error;
+use veritron_types::{serde_yaml, thiserror};
 
 #[derive(Error, Debug)]
 pub enum OrchestrationError {

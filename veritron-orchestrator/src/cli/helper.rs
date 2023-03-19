@@ -1,5 +1,5 @@
-use crate::simple::SimpleOrchestrator as Veritron;
 use crate::errors::CliError;
+use crate::simple::SimpleOrchestrator as Veritron;
 use veritron_types::models::app_config::Config;
 use veritron_types::serde_yaml;
 

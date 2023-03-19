@@ -1,21 +1,21 @@
-mod errors;
-
-use clap::Parser;
-use veritron_orchestrator::cli::init_veritron;
-use veritron_orchestrator::cli::types::Cli;
-use veritron_orchestrator::cli::LOGO;
-use veritron_orchestrator::errors::OrchestrationError;
-
-use veritron_orchestrator::cli::types::AppCommands;
-use veritron_orchestrator::cli::types::Commands;
-
 use std::process;
 use std::sync::atomic::AtomicBool;
 use std::sync::Arc;
+
+use clap::Parser;
+
+use veritron_orchestrator::cli::init_veritron;
+use veritron_orchestrator::cli::types::AppCommands;
+use veritron_orchestrator::cli::types::Cli;
+use veritron_orchestrator::cli::types::Commands;
+use veritron_orchestrator::cli::LOGO;
+use veritron_orchestrator::errors::OrchestrationError;
 use veritron_orchestrator::set_ctrl_handler;
 use veritron_orchestrator::set_panic_hook;
 use veritron_orchestrator::simple::SimpleOrchestrator;
 use veritron_orchestrator::Orchestrator;
+
+mod errors;
 
 fn main() {
     if let Err(e) = run() {
@@ -49,8 +49,8 @@ fn run() -> Result<(), OrchestrationError> {
         }
     };
 
-    //let running = Arc::new(AtomicBool::new(true));
-    //set_ctrl_handler(running.clone());
+    let running = Arc::new(AtomicBool::new(true));
+    set_ctrl_handler(running.clone());
 
     println!("Running");
 
