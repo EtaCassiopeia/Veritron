@@ -1,20 +1,5 @@
-[package]
-name = "Veritron"
-version = "0.1.0"
-edition = "2021"
-authors = ["Mohsen Zainalpour <zainalpour@gmail.com>"]
-license = "MIT"
-description = "Fast and reliable data integration tool for creating a single source of truth for reference data."
-readme = "README.md"
-homepage = "https://github.com/EtaCassiopeia/Veritron"
-repository = "https://github.com/EtaCassiopeia/Veritron"
-keywords = ["Rust", "data", "streaming", "reference", "realtime"]
-categories = ["data-integration"]
-edition = "2021"
-include = [
-    "**/*.rs",
-    "Cargo.toml",
-    "README.md"
+[workspace]
+members = [
+    "veritron-types",
+    "veritron-orchestrator"
 ]
-
-[dependencies]
